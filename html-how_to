@@ -1,0 +1,474 @@
+<!-- POCZ.CC // ACER C720 (ZHN / PEPPY) LINUX FIELD GUIDE -->
+<div id="pocz-c720-guide">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+    #pocz-c720-guide {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      color: #1a1a1a;
+      background-color: #f8f6f0;
+      border: 2px solid #1a1a1a;
+      box-shadow: 6px 6px 0px #1a1a1a;
+      max-width: 820px;
+      margin: 2rem auto;
+      padding: 2rem;
+      line-height: 1.6;
+      box-sizing: border-box;
+    }
+
+    #pocz-c720-guide * {
+      box-sizing: border-box;
+    }
+
+    /* Header & Metadata Table */
+    #pocz-c720-guide .doc-header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    #pocz-c720-guide .doc-ref {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #1a1a1a;
+      color: #f8f6f0;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    #pocz-c720-guide h1 {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace !important;
+      font-size: 1.75rem !important;
+      font-weight: 700 !important;
+      line-height: 1.25 !important;
+      margin: 0 0 0.75rem 0 !important;
+      color: #1a1a1a !important;
+      text-transform: uppercase;
+    }
+
+    #pocz-c720-guide .doc-summary {
+      font-size: 0.95rem;
+      margin: 0 0 1rem 0;
+      color: #333;
+    }
+
+    #pocz-c720-guide .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.5rem;
+      background: #eeeae0;
+      border: 1px solid #1a1a1a;
+      padding: 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    #pocz-c720-guide .spec-item strong {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: #555;
+    }
+
+    /* Section & Checklist Boxes */
+    #pocz-c720-guide .prereq-box {
+      border: 1px dashed #1a1a1a;
+      background-color: #fffdf9;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    #pocz-c720-guide h2 {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace !important;
+      font-size: 1.15rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      margin: 0 0 0.75rem 0 !important;
+      color: #1a1a1a !important;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #pocz-c720-guide ul, 
+    #pocz-c720-guide ol {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.4rem;
+    }
+
+    #pocz-c720-guide li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Step Cards */
+    #pocz-c720-guide .step-card {
+      border: 1px solid #1a1a1a;
+      background: #ffffff;
+      margin-bottom: 1.5rem;
+      transition: opacity 0.2s ease;
+    }
+
+    #pocz-c720-guide .step-card.completed {
+      opacity: 0.65;
+      background: #f2efe9;
+    }
+
+    #pocz-c720-guide .step-header {
+      background: #1a1a1a;
+      color: #f8f6f0;
+      padding: 0.65rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #pocz-c720-guide .step-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    #pocz-c720-guide .step-num {
+      background: #f8f6f0;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.1rem 0.45rem;
+    }
+
+    #pocz-c720-guide .step-title {
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    #pocz-c720-guide .step-check-label {
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    #pocz-c720-guide .step-check {
+      accent-color: #f8f6f0;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    #pocz-c720-guide .step-sub {
+      background: #eeeae0;
+      border-bottom: 1px solid #1a1a1a;
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #333;
+    }
+
+    #pocz-c720-guide .step-body {
+      padding: 1.15rem 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    #pocz-c720-guide .step-body p {
+      margin: 0 0 0.75rem 0;
+    }
+
+    /* Keyboard Keys & Inline Code */
+    #pocz-c720-guide kbd {
+      background: #eeeae0;
+      border: 1px solid #1a1a1a;
+      border-bottom-width: 2px;
+      border-radius: 3px;
+      padding: 0.05rem 0.4rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #pocz-c720-guide code.inline {
+      background: #eeeae0;
+      padding: 0.1rem 0.35rem;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+
+    /* Terminal Code Block */
+    #pocz-c720-guide .terminal-wrap {
+      background: #1a1a1a;
+      color: #f8f6f0;
+      border: 1px solid #1a1a1a;
+      margin: 0.85rem 0;
+      padding: 0.85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      overflow-x: auto;
+    }
+
+    #pocz-c720-guide .terminal-cmd {
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 0.88rem;
+      color: #a8ff60;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 0;
+    }
+
+    #pocz-c720-guide .copy-btn {
+      background: #f8f6f0;
+      color: #1a1a1a;
+      border: 1px solid #f8f6f0;
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.35rem 0.7rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    #pocz-c720-guide .copy-btn:hover {
+      background: #a8ff60;
+      border-color: #a8ff60;
+      color: #1a1a1a;
+    }
+
+    /* Footer Notes */
+    #pocz-c720-guide .notes-box {
+      border-top: 2px solid #1a1a1a;
+      padding-top: 1.25rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      #pocz-c720-guide {
+        padding: 1.15rem;
+        margin: 1rem 0;
+        box-shadow: 4px 4px 0px #1a1a1a;
+      }
+      #pocz-c720-guide h1 {
+        font-size: 1.35rem !important;
+      }
+      #pocz-c720-guide .terminal-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      #pocz-c720-guide .copy-btn {
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- DOCUMENT HEADER -->
+  <div class="doc-header">
+    <div class="doc-ref">POCZ.CC // FIELD MANUAL // REV 2026</div>
+    <h1>Acer Chromebook C720 (Model ZHN) — UEFI &amp; Linux Conversion</h1>
+    <p class="doc-summary">
+      Procedure for removing hardware write-protection, flashing MrChromebox Full UEFI ROM, and converting an End-of-Life Acer C720 into a standalone Linux machine.
+    </p>
+    <div class="spec-grid">
+      <div class="spec-item"><strong>Reg. Model</strong>Acer ZHN (C720 Series)</div>
+      <div class="spec-item"><strong>Board Name</strong>PEPPY (Intel Haswell)</div>
+      <div class="spec-item"><strong>Firmware Target</strong>MrChromebox Full ROM</div>
+      <div class="spec-item"><strong>Internal Drive</strong>16GB M.2 2242 SATA</div>
+    </div>
+  </div>
+
+  <!-- PREREQUISITES -->
+  <div class="prereq-box">
+    <h2>[00] Required Tools &amp; Media</h2>
+    <ul>
+      <li><strong>Phillips Screwdriver:</strong> Size <code class="inline">#0</code> or <code class="inline">#00</code>.</li>
+      <li><strong>USB Flash Drive (8GB+):</strong> For the bootable Linux installer (plus an optional spare USB stick to back up your stock ChromeOS ROM).</li>
+      <li><strong>Secondary Computer:</strong> To flash the Linux ISO onto your USB drive using <strong>BalenaEtcher</strong> or <strong>Rufus</strong>.</li>
+    </ul>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step-card" id="step-card-1">
+    <div class="step-header" onclick="togglePoczStep(1)">
+      <div class="step-title-wrap">
+        <span class="step-num">01</span>
+        <span class="step-title">Create Bootable Linux USB</span>
+      </div>
+      <label class="step-check-label" onclick="event.stopPropagation()">
+        <input type="checkbox" class="step-check" onchange="togglePoczStep(1, this.checked)"> DONE
+      </label>
+    </div>
+    <div class="step-sub">Requires a separate computer and an 8GB+ USB flash drive.</div>
+    <div class="step-body">
+      <p>Download a 64-bit ISO for a lightweight Linux distribution tailored for 2GB–4GB of RAM and a 16GB SSD:</p>
+      <ul>
+        <li><strong>Linux Mint (XFCE Edition)</strong> or <strong>Xubuntu:</strong> Strong out-of-the-box hardware support and clean desktop layout.</li>
+        <li><strong>Lubuntu</strong> or <strong>MX Linux:</strong> Ideal ultra-light footprint if your C720 is the 2GB RAM variant.</li>
+      </ul>
+      <p style="margin-top:0.5rem; margin-bottom:0;">Use <strong>BalenaEtcher</strong> or <strong>Rufus</strong> to write the <code class="inline">.iso</code> image to your USB drive.</p>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-card" id="step-card-2">
+    <div class="step-header" onclick="togglePoczStep(2)">
+      <div class="step-title-wrap">
+        <span class="step-num">02</span>
+        <span class="step-title">Remove Hardware Write-Protect Screw</span>
+      </div>
+      <label class="step-check-label" onclick="event.stopPropagation()">
+        <input type="checkbox" class="step-check" onchange="togglePoczStep(2, this.checked)"> DONE
+      </label>
+    </div>
+    <div class="step-sub">Power off completely and unplug the AC adapter before opening the chassis.</div>
+    <div class="step-body">
+      <ol>
+        <li>Flip the C720 over and remove all <strong>13 screws</strong> from the bottom cover—there are 12 visible screws plus <strong>1 hidden screw underneath the white warranty sticker</strong> along the bottom-center edge.</li>
+        <li>Gently pry off the bottom plastic cover starting near the rear hinge vents.</li>
+        <li>Locate the <strong>Write-Protect (WP) screw</strong> on the left side of the motherboard between the Wi-Fi card and the keyboard ribbon cable. It is labeled <strong>7</strong> on the board with a <strong>large white arrow</strong> pointing at it, bridging two silver semicircular solder pads.</li>
+        <li>Remove that screw completely (store it safely or tape it inside the plastic shell), snap the bottom cover back into place, and reinstall the outer case screws.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-card" id="step-card-3">
+    <div class="step-header" onclick="togglePoczStep(3)">
+      <div class="step-title-wrap">
+        <span class="step-num">03</span>
+        <span class="step-title">Enable ChromeOS Developer Mode</span>
+      </div>
+      <label class="step-check-label" onclick="event.stopPropagation()">
+        <input type="checkbox" class="step-check" onchange="togglePoczStep(3, this.checked)"> DONE
+      </label>
+    </div>
+    <div class="step-sub">Note: This wipes all local data currently stored on the Chromebook.</div>
+    <div class="step-body">
+      <ol>
+        <li>Plug the AC charger back in (removing the bottom cover trips a battery cutoff switch that requires AC power to reset).</li>
+        <li>Hold down <kbd>Esc</kbd> + <kbd>Refresh (F3)</kbd> and tap the <kbd>Power</kbd> button once.</li>
+        <li>At the yellow exclamation recovery screen, press <kbd>Ctrl</kbd> + <kbd>D</kbd> (there is no on-screen prompt for this shortcut).</li>
+        <li>Press <kbd>Enter</kbd> to confirm turning OS verification off.</li>
+        <li>The machine will reboot and spend ~5 minutes transitioning to Developer Mode. When it returns to the white <em>"OS Verification is OFF"</em> screen, press <kbd>Ctrl</kbd> + <kbd>D</kbd> to boot ChromeOS.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-card" id="step-card-4">
+    <div class="step-header" onclick="togglePoczStep(4)">
+      <div class="step-title-wrap">
+        <span class="step-num">04</span>
+        <span class="step-title">Open a Root Command Shell</span>
+      </div>
+      <label class="step-check-label" onclick="event.stopPropagation()">
+        <input type="checkbox" class="step-check" onchange="togglePoczStep(4, this.checked)"> DONE
+      </label>
+    </div>
+    <div class="step-sub">Connect to Wi-Fi on the welcome screen; do not sign in with a Google account.</div>
+    <div class="step-body">
+      <p>Once connected to Wi-Fi on the initial setup screen, open a terminal using either method:</p>
+      <ul>
+        <li><strong>Method A (VT2 Console):</strong> Press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2 (Right Arrow →)</kbd>. At the login prompt, type <code class="inline">chronos</code> and press <kbd>Enter</kbd> (no password required).</li>
+        <li><strong>Method B (Guest Crosh):</strong> Click <em>Browse as Guest</em>, press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> to open Crosh, type <code class="inline">shell</code>, and press <kbd>Enter</kbd>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step-card" id="step-card-5">
+    <div class="step-header" onclick="togglePoczStep(5)">
+      <div class="step-title-wrap">
+        <span class="step-num">05</span>
+        <span class="step-title">Flash MrChromebox UEFI Firmware</span>
+      </div>
+      <label class="step-check-label" onclick="event.stopPropagation()">
+        <input type="checkbox" class="step-check" onchange="togglePoczStep(5, this.checked)"> DONE
+      </label>
+    </div>
+    <div class="step-sub">Keep AC power connected throughout the flashing process.</div>
+    <div class="step-body">
+      <p>Because the C720's legacy ChromeOS build has expired root SSL certificates, include the <code class="inline">-k</code> flag so <code class="inline">curl</code> bypasses certificate checks:</p>
+      
+      <div class="terminal-wrap">
+        <pre class="terminal-cmd" id="pocz-fw-cmd">cd; curl -LOkf https://mrchromebox.tech/firmware-util.sh &amp;&amp; sudo bash firmware-util.sh -k</pre>
+        <button type="button" class="copy-btn" onclick="copyPoczCmd(this)">Copy</button>
+      </div>
+
+      <ol>
+        <li>Confirm the utility identifies <strong>Acer Chromebook C720 (PEPPY)</strong> and shows <strong>Fw WP: Disabled</strong>.</li>
+        <li>Type <kbd>2</kbd> and press <kbd>Enter</kbd> for <strong>Install/Update UEFI (Full ROM) Firmware</strong>.</li>
+        <li>Type <kbd>Y</kbd> to confirm. Insert a USB drive if prompted to save a backup copy of your stock BIOS.</li>
+        <li>Wait for the ROM to download, write, and verify. Once complete, press <kbd>Enter</kbd> to return to the menu, then press <kbd>P</kbd> to power off.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step-card" id="step-card-6">
+    <div class="step-header" onclick="togglePoczStep(6)">
+      <div class="step-title-wrap">
+        <span class="step-num">06</span>
+        <span class="step-title">Boot USB &amp; Install Linux</span>
+      </div>
+      <label class="step-check-label" onclick="event.stopPropagation()">
+        <input type="checkbox" class="step-check" onchange="togglePoczStep(6, this.checked)"> DONE
+      </label>
+    </div>
+    <div class="step-sub">Your C720 is now a standalone UEFI PC and will reclaim all 16GB of SSD space.</div>
+    <div class="step-body">
+      <ol>
+        <li>Insert your bootable Linux USB drive and press the <kbd>Power</kbd> button.</li>
+        <li>Press <kbd>Esc</kbd> at the Coreboot splash screen to open the UEFI menu.</li>
+        <li>Select <strong>Boot Manager</strong>, pick your <strong>USB Drive</strong>, and press <kbd>Enter</kbd>.</li>
+        <li>Once the live desktop loads, launch the <strong>Install</strong> program, select the <strong>Chromebook</strong> keyboard layout when prompted, choose <strong>Erase disk and install</strong>, and finish setup.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- FIELD NOTES -->
+  <div class="notes-box">
+    <h2>[APPENDIX] Hardware &amp; Post-Install Notes</h2>
+    <ul>
+      <li><strong>Top-Row Function Keys:</strong> Selecting the <em>Chromebook</em> keyboard layout during Linux installation maps the top-row media, volume, and brightness keys natively.</li>
+      <li><strong>Storage Upgrade (M.2 2242 SATA):</strong> Unlike later Chromebooks with soldered eMMC chips, the C720 uses a socketed <strong>42mm M.2 SATA (NGFF)</strong> drive next to the battery. You can drop in a 64GB or 128GB M.2 2242 SATA SSD (not NVMe) while the bottom cover is off.</li>
+    </ul>
+  </div>
+
+  <script>
+    function copyPoczCmd(btn) {
+      var cmdText = document.getElementById('pocz-fw-cmd').innerText;
+      navigator.clipboard.writeText(cmdText).then(function() {
+        var original = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(function() {
+          btn.innerText = original;
+        }, 2000);
+      });
+    }
+
+    function togglePoczStep(stepNum, explicitState) {
+      var card = document.getElementById('step-card-' + stepNum);
+      var checkbox = card.querySelector('.step-check');
+      var isChecked = (typeof explicitState === 'boolean') ? explicitState : !checkbox.checked;
+      checkbox.checked = isChecked;
+      if (isChecked) {
+        card.classList.add('completed');
+      } else {
+        card.classList.remove('completed');
+      }
+    }
+  </script>
+</div>
